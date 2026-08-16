@@ -1,6 +1,6 @@
 ---
 name: tts-forge
-description: Provider-agnostic voiceover production. Use when a video has no audio track and needs a voice, when the user mentions 配音 / voiceover (TTS), when a voice must be chosen or swapped, or when another skill (e.g. a video router) hands off a voiceover task. For end-to-end narration plus burned-in subtitles on a finished video, narrate-video orchestrates and calls this for voice production. Covers MiniMax (mmx-cli) and OpenAI built-in; any other provider via a small wrapper you write.
+description: Provider-agnostic voiceover production. Use when a video has no audio track and needs a voice, when the user mentions 配音 / voiceover (TTS), when a voice must be chosen or swapped, or when another skill (e.g. a video router) hands off a voiceover task. For adding narration plus burned-in subtitles to an already-finished video, narrate-video is the entry point — it runs its own IndexTTS2 voice pipeline. Covers MiniMax (mmx-cli) and OpenAI built-in; any other provider via a small wrapper you write.
 ---
 
 # tts-forge
