@@ -31,7 +31,7 @@ provider_synth() { # $1=text  $2=outfile
   case "$PROVIDER" in
     minimax) mmx tts --voice "$VOICE" --text "$1" --out "$2" ;;
     openai)
-      curl -s https://api.openai.com/v1/audio/speech -X POST \
+      curl -s --fail --max-time 120 https://api.openai.com/v1/audio/speech -X POST \
         -H "Authorization: Bearer $OPENAI_API_KEY" -H "Content-Type: application/json" \
         -d "{\"model\":\"tts-1\",\"voice\":\"$VOICE\",\"input\":$(python -c "import json,sys;print(json.dumps(sys.argv[1]))" "$1")}" \
         --output "$2" ;;
