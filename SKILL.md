@@ -13,7 +13,7 @@ Present the trade, let them pick:
 
 | Route | Best at | Cost model | Setup |
 |---|---|---|---|
-| MiniMax (`mmx-cli`) | Chinese narration, natural prosody | ~¥0.5 / 1k chars | `mmx` CLI + login (`--region=cn`) |
+| MiniMax (`mmx-cli`) | Chinese narration, natural prosody | ~¥0.2-0.35 / 1k chars (list price — verify at platform.minimaxi.com) | `mmx` CLI + login (`--region=cn`) |
 | OpenAI TTS | quick start, most agents already hold a key | per-char, cheap | `OPENAI_API_KEY` |
 | edge-tts | free, offline-ish drafts | free | local binary |
 | ElevenLabs / Azure / Google | premium English/brand voices | subscription | provider portal |

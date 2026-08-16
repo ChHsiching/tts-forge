@@ -29,7 +29,7 @@ mkdir -p "$OUT"
 
 provider_synth() { # $1=text  $2=outfile
   case "$PROVIDER" in
-    minimax) mmx tts --voice "$VOICE" --text "$1" --out "$2" ;;
+    minimax) mmx speech synthesize --voice "$VOICE" --text "$1" --out "$2" ;;
     openai)
       curl -s --fail --max-time 120 https://api.openai.com/v1/audio/speech -X POST \
         -H "Authorization: Bearer $OPENAI_API_KEY" -H "Content-Type: application/json" \
@@ -47,6 +47,7 @@ if [ "$FORCE" = "1" ]; then
   rm -f "$OUT"/*.mp3
 fi
 while IFS=$'\t' read -r id text; do
+  id="${id%$'\r'}"; text="${text%$'\r'}"
   [ -z "$id" ] && continue
   N=$((N + 1))
   F="$OUT/$id.mp3"
