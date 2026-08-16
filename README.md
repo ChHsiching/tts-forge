@@ -10,6 +10,8 @@ Built around the two ways voiceover goes wrong: burning synthesis quota to disco
 npx skills add ChHsiching/tts-forge
 ```
 
+No other skill required. Provider tools per route: `mmx` CLI for MiniMax (login `--region=cn` + account balance), `curl` + `OPENAI_API_KEY` for OpenAI, or any provider you wrap with three commands (audition / synthesize-segment / skip-existing).
+
 ## Use
 
 > 这篇文章做成视频需要配音，帮我配
