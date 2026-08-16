@@ -52,4 +52,6 @@ Run `scripts/synthesize.sh <segments.tsv> <out-dir> --provider <p> --voice <id>`
 
 ## Provider quick reference
 
-Built-in providers run through `scripts/synthesize.sh --provider minimax|openai --voice <id>` — the script owns skip-existing, cost reporting, and assembly. Any other provider (ElevenLabs, edge-tts, Azure, Google) becomes one small wrapper exposing the same three commands any wrapper needs: audition, synthesize-segment, skip-existing.
+Any provider beyond the built-ins (ElevenLabs, edge-tts, Azure, Google) becomes one small wrapper exposing the same three commands: audition, synthesize-segment, skip-existing.
+
+Done when: the script reports `SYNTH_DONE` with zero failed segments and `narration.mp3` plays every segment end-to-end.
